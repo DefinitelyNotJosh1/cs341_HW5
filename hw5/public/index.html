@@ -1,0 +1,89 @@
+<!-- Author: Joshua Krasnogorov -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script 
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> 
+        </script>
+        <title>Cheesecake Order Form</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+    </head>
+    <body>
+        <!-- Import picture and title -->
+        <h1 id="pageTitle">Cheesecake Order Form</h1>
+        <img id="picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg/640px-Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg"  width="175" height="175">
+
+        <!-- JavaScript Message display -->
+         <h1 id="orderConfirmation"></h1>
+         <p id="orderConfirmationInfo"></p>  
+
+         <!-- Order Information  -->
+        <table id="orderTable">
+            <tr>
+            <th>Quantity</th>
+            <th>Topping</th>
+            </tr>
+            <tr>
+            <td>
+                <select name="quantity" id="quantity">
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </td>
+            <td id="toppingSection">
+                <label>
+                    <input id="toppings" type="radio" name="toppings" value="plain">
+                    Plain
+                </label><br>
+                <label>
+                    <input id="toppings" type="radio" name="toppings" value="cherry">
+                    Cherry
+                </label><br>
+                <label>
+                    <input id="toppings" type="radio" name="toppings" value="chocolate">
+                    Chocolate
+                </label><br>
+            </td>
+        </table>
+        <label id="notesLabel" for="notes">Notes:</label><br>
+        <textarea id="notes" name="notes" rows="4" cols="40" placeholder="Enter any special instructions here."></textarea><br>
+        <input id="orderButton" type="button" value="Order">
+        
+        <!-- JavaScript/JQuery code for ordering -->
+        <script src="javascripts/order.js"></script>
+
+        <!-- Order dropdown -->
+        <h3 id="prevOrders">Orders for
+            <div class="dropdown">
+                <button id="dropdownButton"></button>
+                <div class="dropdown-content">
+                    <a href="#" data-value="Jan">Jan</a>
+                    <a href="#" data-value="Feb">Feb</a>
+                    <a href="#" data-value="Mar">Mar</a>
+                    <a href="#" data-value="Apr">Apr</a>
+                    <a href="#" data-value="May">May</a>
+                    <a href="#" data-value="Jun">Jun</a>
+                    <a href="#" data-value="Jul">Jul</a>
+                    <a href="#" data-value="Aug">Aug</a>
+                    <a href="#" data-value="Sep">Sep</a>
+                    <a href="#" data-value="Oct">Oct</a>
+                    <a href="#" data-value="Nov">Nov</a>
+                    <a href="#" data-value="Dec">Dec</a>
+                </div>
+            </div>
+        </h3>
+
+         <!-- Javascript/JQuery code for dropdown -->
+        <script src="javascripts/dropdown.js"></script>
+
+        <!-- Previous orders -->
+        <div id="listContainer">
+            <ul id="ordersList">
+                <li>11 cherry</li>
+                <li>17 chocolate</li>
+                <li>31 plain</li>
+            </ul>
+        </div>
+    </body>
+</html>

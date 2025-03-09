@@ -1,0 +1,209 @@
+/* Author: Joshua Krasnogorov 
+*  Most items are self-explanatory so no comments - I will explain the dropdown container
+*/
+html {
+body { 
+	font: 100% georgia, sans-serif;
+	line-height: 1.88889;
+	color: #ffffff; 
+	background: #656658 url(https://wallpapercave.com/wp/Es0sW2x.jpg); 
+    text-align: center;
+    background-position: center;
+	}
+    #pageTitle { 
+        letter-spacing: 1px;
+        margin-bottom: 10px; 
+        color: #ffffff;
+        background: #5d4323;
+        }
+    #picture {
+        border: 5px solid #000000;
+        border-radius: 10px;
+        width: 300px;
+        height: auto;
+    }
+    #orderConfirmation {
+        font: 100% italic normal 1.4em georgia, sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 0px; 
+        color: #ffffff;
+        background: #5d4323;
+        align-self: center;
+    }
+    #orderConfirmationInfo {
+        font: 120% italic normal 1.4em georgia, sans-serif;
+        letter-spacing: 1px;
+        margin-bottom: 10px; 
+        margin-top: 0px;
+        color: #ffffff;
+        background: #5d4323;
+        align-self: center;
+    }
+    #orderTable {
+        background: #5d4323;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        padding: 5px;
+        }
+    #quantity {
+        width: 50px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+        color: #333;
+        appearance: none;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        cursor: pointer;
+        text-align: center;
+    }
+    #toppingSection {
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        cursor: pointer;
+        text-align: left;
+        align-items: left;
+    }
+    #toppings {
+        background-color: #f8f8f8;
+        color: #333;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        cursor: pointer;
+        text-align: left;
+        align-items: left;
+    }
+    #notesLabel {
+        border: 2px solid #000000;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #ffffff;
+        background: #5d4323;
+        padding: 2px;
+    }
+    #notes {
+        width: 350px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+        color: #000000;
+        appearance: none;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        cursor: text;
+        text-align: left;
+        margin-top: 6px;
+    }
+    #orderButton {
+        width: 100px;
+        font-size: 16px;
+        height: 30px;
+        color: #000000;
+        cursor: pointer;
+        border: 2px solid #000000;
+        border-radius: 5px;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+    }
+    #prevOrders {
+        background: #5d4323;
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+    #listContainer {
+        background: #5d4323;
+        display: flex;
+        background-size: contain;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 10px;
+    }
+    #ordersList {
+        font-size: 16px;
+        align-items: left;
+        list-style-type: circle;
+        margin: 0;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+
+
+    /* Info for dropdown container 
+        Credit to ChatGPT for an outline to work with
+        (although it was pretty bad)
+    */
+
+    /* Container to hold the text and dropdown inline */
+    .container {
+        display: flex;
+        align-items: center; /* Align items in the same line */
+    }
+
+    /* Inline style for the text */
+    .text {
+        margin-right: 10px;
+    }
+
+    /* Style for the dropdown container */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        width: auto;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .dropdown button {
+        width: 60px;
+        padding-left: 0px;
+        padding-right: 0px;
+        cursor: pointer;
+        border: 0px;
+        text-align: center;
+        display: inline-block;
+        font: 100% georgia, sans-serif;
+        background: #786145;
+        color: #ffffff;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100px;
+        background-color: #fff;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        max-height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        white-space: nowrap;
+        overflow-y: auto;
+    }
+    
+    /* Show dropdown when hovering over the button or the dropdown itself */
+    .dropdown:hover .dropdown-content {
+        display: block; /* Display the dropdown on hover */
+    }
+
+    /* Style for the items inside the dropdown */
+    .dropdown-content a {
+        padding: 10px;
+        font: 100% georgia, sans-serif;
+        text-decoration: none;
+        display: block;
+        color: black;
+        font-size: 16px
+    }
+}
