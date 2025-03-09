@@ -14,6 +14,17 @@ $(document).ready(function(){
             var quantity = $("#quantity").val();
             var topping = $("input[name='toppings']:checked").val();
             
+            // Send POST request to add order to database
+            $.post('/neworder', {
+                quantity: quantity,
+                topping: topping,
+                notes: textAreaNotes
+            }, function(response) {
+                console.log('Order added to database:', response);
+            }).fail(function(error) {
+                console.error('Error adding order to database:', error);
+            });
+            
             // hide order segments
             $('#orderTable').hide();
             $('#notes').hide();
