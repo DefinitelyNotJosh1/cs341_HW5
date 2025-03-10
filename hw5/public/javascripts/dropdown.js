@@ -15,12 +15,12 @@ $(document).ready(function() {
             data.forEach(function(order) {
                 if (order.topping == 1) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'plain');
-                } else if (order.topping == 2 ){
-                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'vegan');
                 } else if (order.topping == 3) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'chocolate');
-                } else {
+                } else if (order.topping == 4) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'cherry');
+                } else {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'unknown');
                 }
                 ordersList.append(orderItem);
             });
@@ -56,12 +56,14 @@ $(document).ready(function() {
             data.forEach(function(order) {
                 if (order.topping == 1) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'plain');
-                } else if (order.topping == 2 ){
+                } else if (order.topping == 2) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'vegan');
                 } else if (order.topping == 3) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'chocolate');
-                } else {
+                } else if (order.topping == 4) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'cherry');
+                } else {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'unknown');
                 }
                 ordersList.append(orderItem);
             });

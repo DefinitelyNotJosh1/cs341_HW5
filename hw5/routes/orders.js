@@ -31,15 +31,27 @@ router.post('/', function(req, res, next) {
             return res.status(500).json({ error: 'Database error occurred' });
         }
 
-        // parse results into the desired format
-        const orders = results.map(row => ({
-            topping: row.t_id, quantity: row.quantity
+        // aggregate quantities for the same topping type
+        const toppingMap = {};
+        
+        // group by topping and sum quantities
+        results.forEach(row => {
+            const toppingId = row.t_id;
+            if (!toppingMap[toppingId]) {
+                toppingMap[toppingId] = 0;
+            }
+            toppingMap[toppingId] += parseInt(row.quantity);
+        });
+        
+        // convert the aggregated map to an array of objects
+        const aggregatedOrders = Object.keys(toppingMap).map(toppingId => ({
+            topping: parseInt(toppingId),
+            quantity: toppingMap[toppingId]
         }));
 
-        // return the JSON response
-        console.log(orders);
-    
-        res.json(orders);
+        console.log(aggregatedOrders);
+        // return the JSON response with aggregated data
+        res.json(aggregatedOrders);
     });
 });
 
