@@ -15,6 +15,8 @@ $(document).ready(function() {
             data.forEach(function(order) {
                 if (order.topping == 1) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'plain');
+                } else if (order.topping == 2) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'vegan');
                 } else if (order.topping == 3) {
                     var orderItem = $('<li></li>').text(order.quantity + ' ' + 'chocolate');
                 } else if (order.topping == 4) {
