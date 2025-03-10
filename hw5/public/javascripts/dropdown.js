@@ -46,7 +46,15 @@ $(document).ready(function() {
             ordersList.empty();
 
             data.forEach(function(order) {
-                var orderItem = $('<li></li>').text(order.quantity + ' ' + order.topping);
+                if (order.topping == 1) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'plain');
+                } else if (order.topping == 2 ){
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'vegan');
+                } else if (order.topping == 3) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'chocolate');
+                } else {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'cherry');
+                }
                 ordersList.append(orderItem);
             });
         });

@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
     if (topping === 'plain') {
         t_id = 1;
     } else if (topping === 'cherry') {
-        t_id = 2;
+        t_id = 4;
     } else if (topping === 'chocolate') {
         t_id = 3;
     } else {
