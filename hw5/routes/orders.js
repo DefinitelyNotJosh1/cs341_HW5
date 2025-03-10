@@ -37,7 +37,9 @@ router.post('/', function(req, res, next) {
         }]));
 
         // return the JSON response
-        res.json(JSON.stringify(orders));
+        console.log(orders);
+    
+        res.json(orders);
     });
 });
 
