@@ -4,7 +4,20 @@
 $(document).ready(function() {
     var defaultMonth = 'Jan'; // default month
         $('#dropdownButton').text(defaultMonth); // set default month
-    
+
+        // automatically load orders for default month
+        // $.post('/orders', { month: defaultMonth }, function(data) {
+
+        //     // get order list and clear it
+        //     var ordersList = $('#ordersList');
+        //     ordersList.empty();
+
+        //     data.forEach(function(order) {
+        //         var orderItem = $('<li></li>').text(order.quantity + ' ' + order.topping);
+        //         ordersList.append(orderItem);
+        //     });
+        // });
+
     // enable scrolling with mouse wheel when hovering over the dropdown
     $('.dropdown-content').on('mousewheel DOMMouseScroll', function(e) {
         var scrollTo = null;
