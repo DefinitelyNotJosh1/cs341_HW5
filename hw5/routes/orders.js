@@ -32,9 +32,9 @@ router.post('/', function(req, res, next) {
         }
 
         // parse results into the desired format
-        const orders = results.map(row => ([{
+        const orders = results.map(row => ({
             topping: row.topping, quantity: row.quantity
-        }]));
+        }));
 
         // return the JSON response
         console.log(orders);
