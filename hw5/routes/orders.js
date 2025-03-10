@@ -31,10 +31,8 @@ router.post('/', function(req, res, next) {
             return res.status(500).json({ error: 'Database error occurred' });
         }
 
-        const orders = JSON.parse(JSON.stringify(results));
-
         // parse results into the desired format
-        orders = results.map(row => ([{
+        const orders = results.map(row => ([{
             topping: row.topping, quantity: row.quantity
         }]));
 
