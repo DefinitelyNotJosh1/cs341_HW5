@@ -4,7 +4,30 @@
 $(document).ready(function() {
     var defaultMonth = 'Jan'; // default month
         $('#dropdownButton').text(defaultMonth); // set default month
-    
+
+        // automatically load orders for default month
+        $.post('/orders', { month: defaultMonth }, function(data) {
+
+            // get order list and clear it
+            var ordersList = $('#ordersList');
+            ordersList.empty();
+
+            data.forEach(function(order) {
+                if (order.topping == 1) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'plain');
+                } else if (order.topping == 2) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'vegan');
+                } else if (order.topping == 3) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'chocolate');
+                } else if (order.topping == 4) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'cherry');
+                } else {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'unknown');
+                }
+                ordersList.append(orderItem);
+            });
+        });
+
     // enable scrolling with mouse wheel when hovering over the dropdown
     $('.dropdown-content').on('mousewheel DOMMouseScroll', function(e) {
         var scrollTo = null;
@@ -33,7 +56,17 @@ $(document).ready(function() {
             ordersList.empty();
 
             data.forEach(function(order) {
-                var orderItem = $('<li></li>').text(order.quantity + ' ' + order.topping);
+                if (order.topping == 1) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'plain');
+                } else if (order.topping == 2) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'vegan');
+                } else if (order.topping == 3) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'chocolate');
+                } else if (order.topping == 4) {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'cherry');
+                } else {
+                    var orderItem = $('<li></li>').text(order.quantity + ' ' + 'unknown');
+                }
                 ordersList.append(orderItem);
             });
         });

@@ -17,21 +17,25 @@ router.post('/', function(req, res, next) {
     if (topping === 'plain') {
         t_id = 1;
     } else if (topping === 'cherry') {
-        t_id = 2;
+        t_id = 4;
     } else if (topping === 'chocolate') {
         t_id = 3;
     } else {
         return res.status(400).json({ error: 'Invalid topping' });
     }
     
-    // generate a random valid month
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const randomMonth = months[Math.floor(Math.random() * months.length)];
+    // generate a random month number (1-12)
+    const randomMonth = Math.floor(Math.random() * 12) + 1;
+    console.log("Random month number:", randomMonth);
+    console.log("Topping:", topping);
+    console.log("Quantity:", quantity);
+    console.log("Notes:", notes);
     
+
     // construct SQL query to insert new order
     const query = `
-        INSERT INTO orders (T_ID, QUANTITY, NOTES, MONTH, YEAR)
-        VALUES (${mysql.escape(t_id)}, ${mysql.escape(quantity)}, ${mysql.escape(notes)}, ${mysql.escape(randomMonth)}, 2023)
+        INSERT INTO orders (t_id, quantity, notes, month, year)
+        VALUES (${mysql.escape(t_id)}, ${mysql.escape(quantity)}, ${mysql.escape(notes)}, ${mysql.escape(randomMonth)}, 2023);
     `;
     
     // execute the query using dbms.js
