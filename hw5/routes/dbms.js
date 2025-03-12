@@ -13,7 +13,7 @@ var mysql = require('mysql'),
     async = require('async');
 
 var host = "10.6.2.7";    //pdx0mysql00 IP address
-var database = "cs341-05";  //database name
+var database = "krasnogo27_db";  //database name
 var user = "cs341-05";         //username (change to match your db)
 var password = "gn2c8TMVw3tWK(xE";  //password (change to match your db, yes THIS IS VERY POOR PRACTICE)
 
