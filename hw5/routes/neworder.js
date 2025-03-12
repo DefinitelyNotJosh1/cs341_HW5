@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
     // construct SQL query to insert new order
     const query = `
         INSERT INTO orders (t_id, quantity, notes, month, year)
-        VALUES (${mysql.escape(t_id)}, ${mysql.escape(quantity)}, ${mysql.escape(notes)}, 1, 2023);
+        VALUES (${mysql.escape(t_id)}, ${mysql.escape(quantity)}, ${mysql.escape(notes)}, ${mysql.escape(randomMonth)}, 2023);
     `;
     
     // execute the query using dbms.js
